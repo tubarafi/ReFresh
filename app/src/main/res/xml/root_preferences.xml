@@ -1,0 +1,27 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/notifications_header">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="reminder"
+            app:summaryOff="@string/reminder_summary_off"
+            app:summaryOn="@string/reminder_summary_on"
+            app:title="@string/reminder_title" />
+
+        <EditTextPreference
+            android:defaultValue="12:00"
+            android:dependency="reminder"
+            android:dialogMessage="@string/time_hint"
+            android:inputType="time"
+            android:key="time"
+            android:maxLength="5"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/time_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
